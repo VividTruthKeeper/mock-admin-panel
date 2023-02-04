@@ -1,6 +1,6 @@
 import axios from "axios";
 
-type IUser = {
+interface IUser {
   user: {
     name: string;
     id: number;
@@ -10,13 +10,13 @@ type IUser = {
     createdAt: Date;
     updatedAt: Date;
   };
-};
+}
 
 export const getServerSideProps = async () => {
   let user: IUser | undefined;
   await axios
     .post("http://localhost:3333/api/users/signIn", {
-      email: "bab@gmail.com",
+      email: "aydogdy12@gmail.com",
       password: "Aydogdy@2022",
     })
     .then((res) => {
